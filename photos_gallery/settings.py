@@ -93,10 +93,9 @@ WSGI_APPLICATION = 'photos_gallery.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'photos_gallery', 
-        'HOST': 'mongodb+srv://tult:cuopbien123@photos-gallery-tkekw.mongodb.net/test?retryWrites=true&w=majority'
+        'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
