@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Photos Gallery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery.scrollbar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <style>
+      
+    </style> -->
+
+</head>
+
+<body>
+
+
+  <div class="site-wrap">
+
+    <main class="main-content">
+      <div class="container-fluid photos">
+        <div class="row align-items-stretch">
+          {% for photo in photos %}
+          <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+            <a href={{photo.url}} class="d-block photo-item" data-fancybox="gallery">
+              <img src={{photo.url}} alt="Image" class="img-fluid">
+              <div class="photo-text-more">
+                <span class="icon icon-search"></span>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+
+        {% if photos.has_other_pages %}
+<<<<<<< HEAD:templates/photos.html
+          <div class="pagination justify-content-center">
+=======
+          <div class="pagination">
+
+>>>>>>> dev:backend/templates/photos.html
+            {% if photos.has_previous %}
+            <a class="pagination-action" href="?page=1">
+              <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+            </a>
+            <a class="pagination-action" href="?page={{ photos.previous_page_number }}">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% for num in photos.paginator.page_range %}
+
+            {% if photos.number == num %}
+            <span class="pagination-number pagination-current">{{ num }}</span>
+<<<<<<< HEAD:templates/photos.html
+            {% elif num > photos.number|add:'-5' and num < photos.number|add:'5' %}
+=======
+            {% elif num > photos.number|add:'-3' and num < photos.number|add:'3' %}
+>>>>>>> dev:backend/templates/photos.html
+            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+
+            {% endfor %}
+
+            {% if photos.has_next %}
+            <a class="pagination-action" href="?page={{ photos.next_page_number }}">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            <a class="pagination-action" href="?page={{ photos.paginator.num_pages }}">
+              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+          </div>
+        {% endif %}
+
+        <div class="row justify-content-center">
+          <div class="col-md-12 text-center py-5">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>
+                document.write(new Date().getFullYear());
+              </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i>
+              by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div> <!-- .site-wrap -->
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <!-- <script src="js/jquery.stellar.min.js"></script> -->
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'js/swiper.min.js' %}"></script>
+  <script src="{% static 'js/jquery.scrollbar.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+
+
+</body>
+
+</html>
