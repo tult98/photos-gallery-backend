@@ -95,7 +95,8 @@ WSGI_APPLICATION = 'photos_gallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'photos_gallery'
+        'NAME': 'photos_gallery', 
+        'HOST': 'mongodb+srv://tult:cuopbien123@photos-gallery-tkekw.mongodb.net/test?retryWrites=true&w=majority'
     }
 }
 
