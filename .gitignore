@@ -11,6 +11,7 @@ photos_gallery_env/
 
 .vscode/
 
+venv/
 
 
 local_settings.py
