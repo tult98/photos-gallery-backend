@@ -43,6 +43,14 @@ REST_FRAMEWORK = {
 
 INSTALLED_APPS = [
     'photos.apps.PhotosConfig',
+    'posts.apps.PostsConfig',
+    'django_filters',
+    'rest_framework.authtoken',
+    # third party pakage for user registeration and authentication endpoints
+    'djoser',
+    # JWT authentication backend library
+    'rest_framework_simplejwt',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -100,13 +108,26 @@ WSGI_APPLICATION = 'photos_gallery.wsgi.application'
 # }
 DATABASES = {
    'default': {
-       'ENGINE' : 'djongo',
-       'NAME' : 'photos_gallery', #as named on server 
-       'HOST' : 'mongodb+srv://tult:cuopbien123@cluster0-xukq0.mongodb.net/test?retryWrites=true&w=majority',
-       'USER' : 'tult',
-       'PASSWORD' : 'cuopbien123',
-
+       'ENGINE' : 'django.db.backends.mysql',
+        'NAME' : 'photos_gallery', #as named on server 
+        'USER': 'root',
+        'PASSWORD': 'cuopbien123',
+        'HOST': 'localhost',
+        'PORT': '3306',
    }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'photos_gallery.custompagination.LimitOffsetPaginationWithUpperBound', 
+    'PAGE_SIZE': 10,
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter', 
+        'rest_framework.filters.SearchFilter',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 

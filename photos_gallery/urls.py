@@ -18,8 +18,10 @@ from django.urls import path, include, re_path
 from photos import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1/', include('apis.urls')),
-    path('', views.home, name='home'),
-    path('images/', views.photos, name='photos'),
+    # path('admin/', admin.site.urls),
+    path('api/v1/', include('posts.urls')),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
+    path('api/users/', include('users.urls')),
+    # path('images/', views.photos, name='photos'),
 ]
