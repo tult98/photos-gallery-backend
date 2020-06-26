@@ -12,7 +12,7 @@ class UserProfileList(generics.ListCreateAPIView):
     serializer_class = UserProfileSerializer
     name = 'profile-list'
     permission_classes = (
-        permissions.IsAuthenticated,
+        permissions.IsAdminUser,
     )
 
     def perform_create(self, serializer):

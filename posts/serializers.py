@@ -28,35 +28,6 @@ class CategotySerializer(serializers.HyperlinkedModelSerializer):
             'updated_at',
         )
 
-# class AuthorSerializer(serializers.HyperlinkedModelSerializer):
-#     posts =  serializers.HyperlinkedRelatedField(
-#         many=True,
-#         read_only=True, 
-#         view_name='post-detail',
-#     )
-#     gender = serializers.ChoiceField(
-#         choices=Author.GENDER_CHOICES
-#     )
-#     gender_description = serializers.CharField(
-#         source='get_gender_display',
-#         read_only=True
-#     )
-
-#     class Meta:
-#         model = Author
-#         fields = (
-#             'url', 
-#             'pk', 
-#             'username', 
-#             'full_name', 
-#             'gender',
-#             'gender_description',
-#             'posts_count',
-#             'posts',
-#             'created_at', 
-#             'updated_at',
-#         )
-
 class TagSerializer(serializers.HyperlinkedModelSerializer): 
     posts = serializers.HyperlinkedRelatedField(
         many=True, 
@@ -121,7 +92,8 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
             'author',
             'tags',
             'title',
-            # 'image',
+            # 'image_header',
+            # 'image_container',
             'content',
             'created_at',
             'updated_at',

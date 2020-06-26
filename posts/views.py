@@ -28,9 +28,6 @@ class CategoryList(generics.ListCreateAPIView):
     queryset = Category.objects.all() 
     serializer_class = CategotySerializer
     name = 'category-list'
-    authentication_classes = (
-        TokenAuthentication,
-    )
     permission_classes = (
         permissions.IsAdminUser,
     )
@@ -40,9 +37,6 @@ class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all() 
     serializer_class = CategotySerializer
     name = 'category-detail'
-    authentication_classes = (
-        TokenAuthentication,
-    )
     permission_classes = (
         custompermission.IsAdminOrReadOnly,
     )
@@ -51,9 +45,6 @@ class TagList(generics.ListCreateAPIView):
     queryset= Tag.objects.all() 
     serializer_class = TagSerializer
     name = 'tag-list'
-    authentication_classes = (
-        TokenAuthentication,
-    )
     permission_classes = (
         permissions.IsAuthenticatedOrReadOnly,
     )
@@ -86,9 +77,6 @@ class TagDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset= Tag.objects.all() 
     serializer_class = TagSerializer
     name = 'tag-detail'
-    authentication_classes = (
-        TokenAuthentication,
-    )
     permission_classes = (
         permissions.IsAuthenticatedOrReadOnly,
         custompermission.IsAdminOrReadOnly,
@@ -99,9 +87,6 @@ class PostList(generics.ListCreateAPIView):
     queryset= Post.objects.all() 
     serializer_class = PostSerializer
     name = 'post-list'
-    authentication_classes = (
-        TokenAuthentication,
-    )
     permission_classes = ( 
         permissions.IsAuthenticatedOrReadOnly,
     )   
@@ -113,9 +98,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset= Post.objects.all() 
     serializer_class = PostSerializer
     name = 'post-detail'
-    aithentication_classes = (
-        TokenAuthentication,
-    )
     permission_classes = (
         custompermission.IsAuthorOrReadOnly,
     )

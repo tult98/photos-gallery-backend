@@ -27,18 +27,6 @@ SECRET_KEY = '2_rd3yp5vro3@npoi8pp6$pcfk76sl6mj3=_zw(sie*enjwto*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# setting for rest_framework
-REST_FRAMEWORK = {
-    # 'DEFAULT_AUTHENTICATION_CLASSES': (
-    #    'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-    # ),
-    # 'DEFAULT_PERMISSION_CLASSES': (
-    #     'rest_framework.permissions.IsAuthenticated',
-    # ),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 30
-}
-
 # Application definition
 
 INSTALLED_APPS = [

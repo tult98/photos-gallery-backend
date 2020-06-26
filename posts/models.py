@@ -43,7 +43,8 @@ class Post(models.Model):
         blank=True
     )
     title = models.CharField(max_length=255)
-    # image = models.ImageField()
+    # image_header = models.ImageField(null=True)
+    # image_container = models.ImageField(null=True)
     content = models.TextField() 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
